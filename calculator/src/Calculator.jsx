@@ -25,7 +25,13 @@ function Calculator() {
     }
 
     const handleTotal =(value)=>{
-        setTotal(eval(input))
+        if(input.length >0){
+            setTotal(eval(input))
+        }
+        else{
+            setTotal("Error")
+        }
+       
     }
 
     return (
