@@ -19,7 +19,7 @@ const Card=({name,img,alt})=>{
                 "width":'150px',
                 "height":"150px",
             }} src={img} alt={alt} />
-            <h3>{name}</h3>
+            <h2>{name}</h2>
         </div>
     )
 }
