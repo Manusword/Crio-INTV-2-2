@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 const Card=({name,img,alt})=>{
     return(
-        <div style={{
+        <div className='countryCard' style={{
             "width":'200px',
             "height":"180px",
             "display":"flex",
@@ -32,10 +32,16 @@ function Contries() {
     const API_URL = "https://restcountries.com/v3.1/all";
 
     useEffect(()=>{
-        fetch(API_URL)
-        .then(res=>res.json())
-        .then(data=>{setContriesList(data);})
-        .catch(error=>console.error("error",error))
+        try{
+            fetch(API_URL)
+            .then(res=>res.json())
+            .then(data=>{setContriesList(data);})
+            .catch(error=>console.error("error",error))
+        }
+        catch(error){
+            console.log(error.message)
+        }
+       
     },[])
 
     useEffect(()=>{
