@@ -46,7 +46,10 @@ function Contries() {
 
     useEffect(()=>{
         setContries(contriesList.filter(val=>val.name.common.toLowerCase().includes(search.toLowerCase())))
-    },[search])
+    },[search,contriesList])
+
+  
+
 
     const handleSearch =(e)=>{
         setSearch(e.target.value)
